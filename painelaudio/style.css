@@ -1,0 +1,173 @@
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ff8da1;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.audio-container {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1100px; /* Aumentado para caber duas colunas confortavelmente */
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+/* Sistema de duas colunas */
+.audio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Divide em 2 colunas iguais */
+    gap: 20px; /* Espaço entre os blocos */
+}
+
+/* Cada caixinha de áudio agora parece um mini card de tabela */
+.audio-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    gap: 15px;
+    transition: background-color 0.2s ease;
+}
+
+.audio-row:hover {
+    background-color: #f9fbfd;
+}
+
+.audio-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.audio-title {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 15px;
+}
+
+.audio-desc {
+    margin: 0;
+    font-size: 12px;
+    color: #7f8c8d;
+    line-height: 1.3;
+}
+
+audio {
+    height: 40px;
+    width: 100%;
+    max-width: 240px; /* Jogamos o player um pouquinho menor para caber lado a lado */
+    flex-shrink: 0;
+}
+
+/* Se a tela for pequena (celular), vira uma coluna só automaticamente */
+@media (max-width: 800px) {
+    .audio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==================== RODAPÉ ==================== */
+footer {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Caixa estilo os cards de áudio: fundo branco e sombra */
+.footer-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    
+    /* Borda inicialmente transparente com animação contínua */
+    border: 2px solid transparent;
+    animation: glowPulse 3s infinite ease-in-out;
+}
+
+.footer-text {
+    font-size: 14px;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+/* Link estilizado do GitHub */
+.footer-link {
+    font-size: 14px;
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: #3498db; /* Muda de cor sutilmente ao passar o mouse */
+}
+
+/* Animação que faz a borda transparente brilhar e pulsar a sombra */
+@keyframes glowPulse {
+    0% {
+        border-color: rgba(52, 152, 219, 0);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    }
+    50% {
+        border-color: rgba(52, 152, 219, 0.4); /* Borda ganha uma cor suave */
+        box-shadow: 0 4px 20px rgba(52, 152, 219, 0.25); /* Sombra expande azulada */
+    }
+    100% {
+        border-color: rgba(52, 152, 219, 0);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    }
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 5px; /* Diminuído para colar o subtítulo perto */
+    font-size: 26px;
+}
+
+/* Estilo para as informações do Projeto e da Escola */
+.project-subtitle {
+    text-align: center;
+    color: #e67e22; /* Um tom de laranja/abóbora quente que lembra festa junina */
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase; /* Deixa o texto em letras maiúsculas */
+    margin-top: 0;
+    margin-bottom: 30px; /* Espaço antes de começarem os áudios */
+    border-bottom: 2px dashed #f39c12; /* Uma linha pontilhada charmosa abaixo do nome */
+    padding-bottom: 10px;
+}
